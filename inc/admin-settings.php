@@ -16,16 +16,15 @@ if ( ! function_exists( 'ihs_otp_create_menu' ) ) {
 		$menu_plugin_title = 'Orion OTP';
 
 		// Create new top-level menu.
-		add_menu_page( 'Orion OTP Plugin Settings', $menu_plugin_title, 'administrator', __FILE__, 'ihs_otp_plugin_settings_page', 'dashicons-email' );
-
+		add_menu_page( 'Orion OTP Plugin Settings', $menu_plugin_title, 'administrator', 'orion_settings_page', 'ihs_otp_plugin_settings_page', 'dashicons-email' );
 
 		// Add submenu Page.
-		$parent_slug = __FILE__;
-		$page_title = 'Woocommerce SMS Settings';
-		$menu_title = 'Woocommerce Settings';
-		$capability = 'manage_options';
-		$menu_slug = 'ihs_otp_plugin_woocommerce_settings_page';
-		$function = 'ihs_otp_woocommerce_setting_page_func';
+		$parent_slug = 'orion_settings_page';
+		$page_title  = 'Woocommerce SMS Settings';
+		$menu_title  = 'Woocommerce Settings';
+		$capability  = 'manage_options';
+		$menu_slug   = 'ihs_otp_plugin_woocommerce_settings_page';
+		$function    = 'ihs_otp_woocommerce_setting_page_func';
 		add_submenu_page( $parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function );
 
 		// Call register settings function.
@@ -49,6 +48,7 @@ if ( ! function_exists( 'register_ihs_otp_plugin_settings' ) ) {
 		register_setting( 'ihs-otp-plugin-settings-group', 'ihs_otp_country_code' );
 		register_setting( 'ihs-otp-plugin-settings-group', 'ihs_mobile_length' );
 		register_setting( 'ihs-otp-plugin-settings-group', 'ihs_mgs_route' );
+		register_setting( 'ihs-otp-plugin-settings-group', 'ihs_msg91_region' );
 		register_setting( 'ihs-otp-plugin-settings-group', 'ihs_otp_form_selector' );
 		register_setting( 'ihs-otp-plugin-settings-group', 'ihs_otp_submit_btn-selector' );
 		register_setting( 'ihs-otp-plugin-settings-group', 'ihs_otp_mobile_input_required' );
@@ -61,7 +61,7 @@ if ( ! function_exists( 'register_ihs_otp_plugin_settings' ) ) {
 		register_setting( 'ihs-otp-plugin-settings-group', 'ihs_no_saved_with_country' );
 		register_setting( 'ihs-otp-plugin-settings-group', 'ihs_otp_reset_template' );
 
-		// Woo commerce Checkout OTP Settings
+		// Woo commerce Checkout OTP Settings.
 		register_setting( 'ihs-otp-woo-plugin-settings-group', 'ihs_api_type' );
 		register_setting( 'ihs-otp-woo-plugin-settings-group', 'ihs_otp_auth_key' );
 		register_setting( 'ihs-otp-woo-plugin-settings-group', 'ihs_twilio_api_key' );
@@ -79,10 +79,10 @@ if ( ! function_exists( 'register_ihs_otp_plugin_settings' ) ) {
 		register_setting( 'ihs-otp-woo-plugin-settings-group', 'ihs_otp_woo_mobile_input_name' );
 		register_setting( 'ihs-otp-woo-plugin-settings-group', 'ihs_otp_woo_msg_template' );
 
-		// Woocommerce Admin Mob No
+		// Woocommerce Admin Mob No.
 		register_setting( 'ihs-otp-woo-plugin-settings-group', 'ihs_admin_mob_no' );
 
-		// Woocommerce Order SMS Settings
+		// Woocommerce Order SMS Settings.
 		register_setting( 'ihs-otp-woo-plugin-settings-group', 'ihs_order_pending' );
 		register_setting( 'ihs-otp-woo-plugin-settings-group', 'ihs_order_failed' );
 		register_setting( 'ihs-otp-woo-plugin-settings-group', 'ihs_order_hold' );
@@ -112,12 +112,12 @@ if ( ! function_exists( 'ihs_get_checked_val' ) ) {
 	function ihs_get_checked_val() {
 		$checked_array = array(
 			'checked-yes' => '',
-			'checked-no' => '',
+			'checked-no'  => '',
 		);
-		$checkbox_val = esc_attr( get_option( 'ihs_otp_mobile_input_required' ) );
+		$checkbox_val  = esc_attr( get_option( 'ihs_otp_mobile_input_required' ) );
 		if ( 'Yes' === $checkbox_val ) {
 			$checked_array['checked-yes'] = 'checked';
-		} else if ( 'No' === $checkbox_val ) {
+		} elseif ( 'No' === $checkbox_val ) {
 			$checked_array['checked-no'] = 'checked';
 		}
 		return $checked_array;
@@ -140,8 +140,8 @@ if ( ! function_exists( 'ihs_otp_woocommerce_setting_page_func' ) ) {
 	 * Woo Commerce Setting tab contents
 	 */
 	function ihs_otp_woocommerce_setting_page_func() {
-	?>
+		?>
 		<?php include_once 'woo-commerce-setting-template.php'; ?>
-	<?php
+		<?php
 	}
 }

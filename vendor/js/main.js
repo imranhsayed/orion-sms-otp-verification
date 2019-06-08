@@ -399,24 +399,19 @@
 					countryCodeAndMobileInputEl, submitBtnSelector,
 					mobileInpName = 'ihs-mobile';
 					readOnly = ( countryCode ) ? 'readonly' : '';
-					countryCodeAndMobileInputEl = '<label id="ihs-country-code" class="ihs-mobile-no-lab">' + otp_obj.wpml_messages.mobile_box_label +  '<br>\n' +
+					countryCodeAndMobileInputEl = '<label id="ihs-country-code" class="ihs-mobile-no-lab">' + otp_obj.wpml_messages.mobile_box_label +  '</label>' +
 														'<div class="ihs-country-inp-wrap">' +
-															'<span class="">' +
 															'<input type="text" name="' + countryCodeInputName + '" value="' + countryCode + '" class="ihs-country-code" required placeholder="e.g. +91" aria-invalid="false" readonly maxlength="5">' +
-															'</span> ' +
 														'</div>' +
 														'<div class="ihs-mob-inp-wrap">' +
-															'<span class="">' +
 															'<input type="text" name="' + mobileInpName + '" value="" class="ihs-mb-inp-field" aria-required="true" aria-invalid="false">' +
-															'</span> ' +
-														'</div>' +
-												   '</label>',
+														'</div>';
 					submitBtnSelector = otp.formSelector + ' input[type="submit"]';
 				htmlEl = otp.createMobileInputAndOtherFields( mobileInputName );
-				mobAndCountryCodeContent = '<div class="ihs-mob-country-wrapper">' + countryCodeAndMobileInputEl + '</div>';
+				mobAndCountryCodeContent = '<div class="ihs-mob-country-wrapper" id="ihs-mob-country-wrapper">' + countryCodeAndMobileInputEl + '</div>';
 				mobAndCountryCodeContent += htmlEl.allOtpHtml;
-				otp.mobileInputSelector = '#ihs-country-code .ihs-mb-inp-field';
-				otp.countryCodeSelector = '#ihs-country-code .ihs-country-code';
+				otp.mobileInputSelector = '#ihs-mob-country-wrapper .ihs-mb-inp-field';
+				otp.countryCodeSelector = '#ihs-mob-country-wrapper .ihs-country-code';
 				// $( mobileInputEl ).insertBefore( submitBtnSelector );
 
 				$( otp.formSelector ).append( mobAndCountryCodeContent );
@@ -451,7 +446,7 @@
 		 */
 		createMobileInputAndOtherFields: function ( mobileInputName ) {
 			var htmlEl = {},
-				otpInputEl = '<br><label id="ihs-otp-required" class="ihs-otp-required ihs-otp-hide"> ' + otp_obj.wpml_messages.otp_required + '<br>\n' +
+				otpInputEl = '<label id="ihs-otp-required" class="ihs-otp-required ihs-otp-hide"> ' + otp_obj.wpml_messages.otp_required +
 				'<span class="wrap ihs-otp">' +
 				'<input type="number" id="ihs-mobile-otp" name="ihs-otp" value="" size="40" class="wpcf7-text wpcf7-validates-as-required ihs-otp-hide" aria-required="true" aria-invalid="false">' +
 				'</span>' +
@@ -516,7 +511,7 @@
 		}
 	};
 		if( 'undefined' !== typeof otp_obj ){
-		var selector = 'form' + otp_obj.form_selector;
+		var selector = otp_obj.form_selector;
 		if ( $( selector ) ) {
 			otp.init();
 		}

@@ -7,14 +7,15 @@
 
 /*
 Plugin Name:  Orion SMS OTP Verification
-Plugin URI:   http://imransayed.com/otp-verifcation
-Description:  This plugin allows you to verify mobile number by sending a one time OTP to the user entered mobile number. It gives you an option to choose MSG91 or TWILIO third party API to send OTP and SMS
-Version:      1.0.5
+Plugin URI:   https://www.orionhive.com/sms-verifcation
+Description:  SMS/OTP verification for all forms via Twilio or MSG91. So user can't submit form without verifying mobile number. User verification via SMS.
+Also reset password via SMS/OTP.
+Version:      1.0.9
 Author:       Imran Sayed, Smit Patadiya
-Author URI:   https://profiles.wordpress.org/gsayed786
+Author URI:   https://www.orionhive.com
 License:      GPL2
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:  orion-sms-orion-sms-otp-verification
+Text Domain:  orion-sms-otp-verification
 Domain Path:  /languages
 */
 

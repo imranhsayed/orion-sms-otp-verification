@@ -6,8 +6,13 @@
  */
 
 if ( ! function_exists( 'ihs_get_rate_us_content' ) ) {
+	/**
+	 * Get rating content.
+	 *
+	 * @return string
+	 */
 	function ihs_get_rate_us_content() {
-		$url = esc_url( 'https://imransayed.com/orion/rate-us/' );
+		$url     = esc_url( 'https://www.orionhive.com/rate-us/' );
 		$content = '<div class="d-block text-right mt-3">
 			<a href="' . $url . '" target="_blank">
 				<div class="ihs-rating-stars">
@@ -18,7 +23,7 @@ if ( ! function_exists( 'ihs_get_rate_us_content' ) ) {
 					<i class="fas fa-star"></i>
 				</div>
 				<br>
-				<div class="ihs-rate-us">Rate Us Now !</div>
+				<div class="ihs-rate-us">' . esc_html__( 'Rate Us Now !' ) . '</div>
 			</a>
 		</div>';
 		return $content;

@@ -506,6 +506,10 @@ button.menu-toggle, button.menu-toggle:hover {
 	font-size: 12px !important;
 }
 
+.orion-pricing-link:hover {
+	opacity: unset;
+}
+
 @media only screen and (min-width: 480px) {
 	.ihs-pak-cont .ihs-pak-item{
 		width: 48%;
@@ -525,5 +529,6 @@ button.menu-toggle, button.menu-toggle:hover {
 	}
 }
 
-
-
+.orion-api-msg {
+	font-size: 12px;
+}

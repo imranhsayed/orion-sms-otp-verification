@@ -1,15 +1,15 @@
 === Orion SMS OTP Verification ===
 Contributors: gsayed786, smitpatadiya
-Tags: twilio, msg91, two-step-verification, otp, mobile verification, verification, mobile, phone, sms, one time, password
+Tags: twilio, twilio wordpress plugin, msg91,twilio sms wordpress plugin, twilio sms notification, two-step-verification, otp, mobile verification, verification, mobile, phone, sms, one time, password, sms verification, wordpress plugin, woocommerce, woocommerce order sms
 Requires at least: 4.6
-Tested up to: 4.9.2
+Tested up to: 5.1.1
 Stable tag: 4.9.2
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin allows you to verify mobile number by sending a one time OTP to the mobile number.
-It works with Contact Form 7 and any registration form. You can also reset password using mobile number OTP.
+SMS/OTP verification for all forms via Twilio or MSG91. So user can't submit form without verifying mobile number. User verification via SMS.
+Also reset password via SMS/OTP.
 
 == Description ==
 
@@ -19,44 +19,57 @@ You can verify mobile number on Contact form 7 and any registration form. It wil
 This plugin gives you an option to choose between two third party APIs:
 
 1-MSG91: You can choose MSG91 API to send messages ( https://msg91.com ). All you have to do is get your auth key from MSG91 to send messages from the below link:
-https://msg91.com/signup
+[MSG91 SignUp](https://msg91.com/signup)
 
 2-Twilio: It can use TWILIO API to send messages ( https://www.twilio.com/ ). All you have to do is get your api key from TWILIO to send messages from the below link:
-https://www.twilio.com/console
+[Twilio](https://www.twilio.com/console)
 
-This plugin has been tested with WordPress default theme Twentyseventeen along with the top 6 forms plugins( with their versions available at the time of release ) and works successfully:
-1-Contact Form 7
-2-User Registration -User Profile, Membership and More
-3-Ultimate Member
-4-Profile Builder -User registration & user profile
-5-Profile Press
-6-RegistrationMagic.
+== Plugin Features ==
+
+User registration verification via 2FA (two-factor authentication) verification SMS
+
+This plugin has been tested with WordPress default theme Twenty Nineteen along with the top 12 forms plugins( with their versions available at the time of release ) and works successfully:
+
+1. Contact Form 7
+2. WPForms
+3. Ninja Forms
+4. Formidable Forms
+5. WooCommerce Signup Form
+6. Ultimate Member
+7. User Registration – User Profile, Membership and more
+8. Profile Builder – User registration and user profile
+9. Profile Press
+10. Registration Magic
+11. Buddy Press Signup Form
+12. Everest Forms
+
+-User can also reset his/her password using mobile SMS/OTP.
 
 IMP: For some reason if you want to switch back to any of our older versions. You can download them from :
-https://imransayed.com/orion/download-prev-versions/
+[Orion Hive](https://www.orionhive.com)
 
-You can also purchase premium version to get the OTP verification on Woo-commerce Checkout page and to send Woo-commerce custom Order SMS ( e.g. on Order Cancel, Complete, On Hold, Processing etc ) on https://imransayed.com/orion/
+== Chat Support Help ==
+[Chat](http://m.me/orionotpwordpress)
 
+== **DEMO VIDEOS** ==
 
+Please check the [Demo](https://youtu.be/mSFvlmZcJmM) videos
 
-User can also reset his/her password using mobile OTP.:
+[2018-12-04] [Plugin Demo](https://youtu.be/mSFvlmZcJmM).
 
-
-== Demo Videos ==
-
-Please check the demo videos
-
-[2018-04-04] Plugin Demo.
-
-[youtube https://https://youtu.be/yKGmc_nzqCU]
+[youtube https://youtu.be/vfk3zuZu5zw]
 
 [2018-10-19] TWILIO API CAN NOW BE USED TO SEND SMS/OTP | New Feature in Orion OTP Plugin
 
-[youtube https://youtu.be/YnqsWA3Ccuc]
+[youtube https://youtu.be/mSFvlmZcJmM]
 
 [2018-10-19] Generate Twilio API Key | SID | Auth Token | Twilio Phone No
 
-[youtube https://youtu.be/hne6x-8nbA0]
+[youtube https://youtu.be/CK31fOgI18M]
+
+[2018-12-04] Multiple Form Support
+
+[youtube https://youtu.be/GylaI8f19XM]
 
 [2018-04-04] How to use the Plugin Get MSG91 auth key and mobile otp verification with Contact Form 7.
 
@@ -84,7 +97,7 @@ Step 2. Deactivate all plugins and reactivate ihs geo location.
 Step 3. Deactivate all plugins and reactivate ihs geo location.
 Step 4. Check if all required fields are filled in the WordPress admin Dashboard under Orion OTP menu.
 Step 5. For some reason if you want to switch back to any of our older versions. You can download them from :
-        https://imransayed.com/orion/download-prev-versions/
+[Orion Hive](https://www.orionhive.com/)
 
 == Screenshots ==
 
